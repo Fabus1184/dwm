@@ -39,6 +39,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor }; */
 	{"ATLauncher",	NULL,	"ATLauncher",	0,	1,	-1},
+	{"albert",		"albert",	"albert",	0,	1,	-1},
 };
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -65,7 +66,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *termcmd[]  = { "gnome-terminal", NULL };
-static const char *roficmd[] = {"/home/fabian/rofi.sh", NULL};
+static const char *launchcmd[] = {"/home/fabian/launch.sh", NULL};
 static const char *lockcmd[] = {"/home/fabian/lock.sh", NULL};
 static const char *sscmd[] = {"gnome-screenshot", "-i", NULL};
 static const char *filescmd[] = {"nautilus", NULL};
@@ -84,7 +85,7 @@ static const char *rftoggle[] = {"/home/fabian/rftoggle.sh", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ Mod1Mask,						XK_F1,     spawn,		   {.v = roficmd } },
+	{ Mod1Mask,						XK_F1,     spawn,		   {.v = launchcmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = sscmd } },
 	{ MODKEY,						XK_e,	   spawn,		   {.v = filescmd } },
